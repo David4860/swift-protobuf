@@ -2104,6 +2104,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				INFOPLIST_FILE = SwiftProtobuf.xcodeproj/Protobuf_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.swift.protobuf.SwiftProtobuf;
 				PRODUCT_MODULE_NAME = SwiftProtobuf;
 				PRODUCT_NAME = SwiftProtobuf;
@@ -2120,6 +2121,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				INFOPLIST_FILE = SwiftProtobuf.xcodeproj/Protobuf_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				PRODUCT_BUNDLE_IDENTIFIER = org.swift.protobuf.SwiftProtobuf;
 				PRODUCT_MODULE_NAME = SwiftProtobuf;
 				PRODUCT_NAME = SwiftProtobuf;
@@ -2318,6 +2320,7 @@
 				SWIFT_VERSION = 4.2;
 				USE_HEADERMAP = NO;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
@@ -2380,6 +2383,7 @@
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 4.2;
 				USE_HEADERMAP = NO;
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
