@@ -1,6 +1,7 @@
 //
 // GENERATED FILE
 // DO NOT EDIT
+// swift-format-ignore-file
 //
 
 import XCTest
@@ -212,6 +213,30 @@ extension Test_AllTypes_Proto3 {
     ]
 }
 
+extension Test_AllTypes_Proto3_Optional {
+    static var allTests = [
+        ("testEncoding_optionalInt32", testEncoding_optionalInt32),
+        ("testEncoding_optionalInt64", testEncoding_optionalInt64),
+        ("testEncoding_optionalUint32", testEncoding_optionalUint32),
+        ("testEncoding_optionalUint64", testEncoding_optionalUint64),
+        ("testEncoding_optionalSint32", testEncoding_optionalSint32),
+        ("testEncoding_optionalSint64", testEncoding_optionalSint64),
+        ("testEncoding_optionalFixed32", testEncoding_optionalFixed32),
+        ("testEncoding_optionalFixed64", testEncoding_optionalFixed64),
+        ("testEncoding_optionalSfixed32", testEncoding_optionalSfixed32),
+        ("testEncoding_optionalSfixed64", testEncoding_optionalSfixed64),
+        ("testEncoding_optionalFloat", testEncoding_optionalFloat),
+        ("testEncoding_optionalDouble", testEncoding_optionalDouble),
+        ("testEncoding_optionalBool", testEncoding_optionalBool),
+        ("testEncoding_optionalString", testEncoding_optionalString),
+        ("testEncoding_optionalBytes", testEncoding_optionalBytes),
+        ("testEncoding_optionalCord", testEncoding_optionalCord),
+        ("testEncoding_optionalNestedMessage", testEncoding_optionalNestedMessage),
+        ("testEncoding_lazyNestedMessage", testEncoding_lazyNestedMessage),
+        ("testEncoding_optionalNestedEnum", testEncoding_optionalNestedEnum)
+    ]
+}
+
 extension Test_Any {
     static var allTests = [
         ("test_Any", test_Any),
@@ -242,8 +267,9 @@ extension Test_Any {
         ("test_Any_Value_string_transcode", test_Any_Value_string_transcode),
         ("test_Any_OddTypeURL_FromValue", test_Any_OddTypeURL_FromValue),
         ("test_Any_OddTypeURL_FromMessage", test_Any_OddTypeURL_FromMessage),
+        ("test_Any_JSON_Extensions", test_Any_JSON_Extensions),
         ("test_IsA", test_IsA),
-        ("test_Any_Registery", test_Any_Registery)
+        ("test_Any_Registry", test_Any_Registry)
     ]
 }
 
@@ -556,7 +582,8 @@ extension Test_JSON {
         ("testRepeatedInt32", testRepeatedInt32),
         ("testRepeatedString", testRepeatedString),
         ("testRepeatedNestedMessage", testRepeatedNestedMessage),
-        ("testOneof", testOneof)
+        ("testOneof", testOneof),
+        ("testEmptyMessage", testEmptyMessage)
     ]
 }
 
@@ -615,6 +642,23 @@ extension Test_JSON_Conformance {
         ("testNullConformance", testNullConformance),
         ("testValueList", testValueList),
         ("testNestedAny", testNestedAny)
+    ]
+}
+
+extension Test_JSON_Extensions {
+    static var allTests = [
+        ("test_optionalInt32Extension", test_optionalInt32Extension),
+        ("test_optionalMessageExtension", test_optionalMessageExtension),
+        ("test_repeatedInt32Extension", test_repeatedInt32Extension),
+        ("test_repeatedMessageExtension", test_repeatedMessageExtension),
+        ("test_optionalStringExtensionWithDefault", test_optionalStringExtensionWithDefault),
+        ("test_ArrayWithExtensions", test_ArrayWithExtensions)
+    ]
+}
+
+extension Test_JSON_RecursiveNested_Extensions {
+    static var allTests = [
+        ("test_nestedMessage", test_nestedMessage)
     ]
 }
 
@@ -736,6 +780,12 @@ extension Test_MessageSet {
     ]
 }
 
+extension Test_PackageMapping {
+    static var allTests = [
+        ("testPackageStartingWithNumber", testPackageStartingWithNumber)
+    ]
+}
+
 extension Test_FieldNamingInitials {
     static var allTests = [
         ("testHidingFunctions", testHidingFunctions),
@@ -766,6 +816,14 @@ extension Test_ExtensionNamingInitials_GlobalScoped_NoPrefix {
         ("testLowers", testLowers),
         ("testUppers", testUppers),
         ("testWordCase", testWordCase)
+    ]
+}
+
+extension Test_ValidIdentifiers {
+    static var allTests = [
+        ("testFieldNames", testFieldNames),
+        ("testOneofNames", testOneofNames),
+        ("testEnumCaseNames", testEnumCaseNames)
     ]
 }
 
@@ -952,8 +1010,10 @@ extension Test_TextFormat_Unknown {
         ("test_unknown_lengthDelimited_message", test_unknown_lengthDelimited_message),
         ("test_unknown_lengthDelimited_notmessage", test_unknown_lengthDelimited_notmessage),
         ("test_unknown_lengthDelimited_nested_message", test_unknown_lengthDelimited_nested_message),
+        ("test_unknown_lengthDelimited_nested_message_recursion_limits", test_unknown_lengthDelimited_nested_message_recursion_limits),
         ("test_unknown_group", test_unknown_group),
         ("test_unknown_nested_group", test_unknown_nested_group),
+        ("test_unknown_nested_group_no_recursion_limits", test_unknown_nested_group_no_recursion_limits),
         ("test_unknown_fixed32", test_unknown_fixed32)
     ]
 }
@@ -1120,6 +1180,7 @@ XCTMain(
         testCase(Test_SwiftProtobufNamer.allTests),
         testCase(Test_AllTypes.allTests),
         testCase(Test_AllTypes_Proto3.allTests),
+        testCase(Test_AllTypes_Proto3_Optional.allTests),
         testCase(Test_Any.allTests),
         testCase(Test_Api.allTests),
         testCase(Test_BasicFields_Access_Proto2.allTests),
@@ -1144,6 +1205,8 @@ XCTMain(
         testCase(Test_JSONEncodingOptions.allTests),
         testCase(Test_JSON_Array.allTests),
         testCase(Test_JSON_Conformance.allTests),
+        testCase(Test_JSON_Extensions.allTests),
+        testCase(Test_JSON_RecursiveNested_Extensions.allTests),
         testCase(Test_JSON_Group.allTests),
         testCase(Test_Map.allTests),
         testCase(Test_MapFields_Access_Proto2.allTests),
@@ -1151,10 +1214,12 @@ XCTMain(
         testCase(Test_Map_JSON.allTests),
         testCase(Test_Merge.allTests),
         testCase(Test_MessageSet.allTests),
+        testCase(Test_PackageMapping.allTests),
         testCase(Test_FieldNamingInitials.allTests),
         testCase(Test_ExtensionNamingInitials_MessageScoped.allTests),
         testCase(Test_ExtensionNamingInitials_GlobalScoped.allTests),
         testCase(Test_ExtensionNamingInitials_GlobalScoped_NoPrefix.allTests),
+        testCase(Test_ValidIdentifiers.allTests),
         testCase(Test_OneofFields_Access_Proto2.allTests),
         testCase(Test_OneofFields_Access_Proto3.allTests),
         testCase(Test_Packed.allTests),
